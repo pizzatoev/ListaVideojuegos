@@ -378,6 +378,8 @@
     </div>
     @endif
     
+    <p>Total de videojuegos: {{ $videojuegos->count() }}</p>
+
     <div class="row" id="cards">
         @if($videojuegos->isEmpty())
             <div class="col-12">
@@ -391,6 +393,9 @@
         @foreach($videojuegos as $videojuego)
             <div class="col-lg-4 col-md-6 mb-4">
                 <div class="game-card">
+
+                    <p>{{ $videojuego->titulo }}</p>
+                    
                     <img src="{{ $videojuego->imagen }}" class="card-img-top" alt="imagen de {{ $videojuego->titulo }}">
                     <div class="card-body">
                         <h5 class="card-title">{{ $videojuego->titulo }}</h5>
