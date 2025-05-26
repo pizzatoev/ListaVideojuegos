@@ -10,6 +10,9 @@ COPY . /var/www/html
 
 WORKDIR /var/www/html
 
+# Instala dependencias de Laravel
+RUN composer install --no-interaction --prefer-dist --optimize-autoloader
+
 RUN chown -R www-data:www-data /var/www/html \
     && chmod -R 755 /var/www/html/storage
 
