@@ -2,7 +2,7 @@ FROM php:8.2-apache
 
 # Instalar extensiones necesarias
 RUN apt-get update && apt-get install -y \
-    zip unzip libzip-dev libpng-dev libonig-dev curl git sqlite3 \
+    zip unzip libzip-dev libpng-dev libonig-dev curl git libsqlite3-dev \
     && docker-php-ext-install pdo pdo_mysql pdo_sqlite zip
 
 # Instalar Composer
